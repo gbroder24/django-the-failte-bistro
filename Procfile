@@ -1,0 +1,1 @@
+web: gunicorn failte_bistro.wsgi
