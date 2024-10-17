@@ -7,3 +7,4 @@ def index(request):
         return HttpResponse("You must have POSTed something")
     else:
         return HttpResponse(request.method)
+        
