@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from home import views as index_views
 from about import views as about_views
+from menu import views as menu_views
+from booking import views as booking_views
 
 urlpatterns = [
     path('about/', about_views.about_failte_bistro, name='about'),
+    path('booking/', booking_views.booking_failte_bistro, name='booking'),
     path('home/', index_views.index, name='index'),
+    path('menu/', menu_views.menu_failte_bistro, name='menu'),
     path('admin/', admin.site.urls),
 ]
