@@ -19,6 +19,14 @@ class Menu(models.Model):
     updated_on = models.DateTimeField(default=timezone.now)
 
 
+    class Meta():
+        ordering = ["-posted_on"]
+
+
+    def __str__(self):
+        return f"{self.dish_title}"
+
+
 class Comment(models.Model):
     post = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
@@ -26,3 +34,10 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
     commented_on = models.DateTimeField(default=timezone.now)
     likes = models.ManyToManyField(User, blank=True, related_name="likes")
+
+    class Meta():
+        ordering = ["commented_on"]
+
+
+    def __str__(self):
+        return f"Comment: {self.content} by {self.author} "
