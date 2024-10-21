@@ -43,7 +43,7 @@ def validate_date(date):
 
 # Create your models here.
 
-class reservation(models.Model):
+class Reservation(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customer_reservation')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
