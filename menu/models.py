@@ -15,3 +15,5 @@ class Menu(models.Model):
     posted_on = models.DateTimeField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
     hearts = models.ManyToManyField(User, blank=True, related_name="hearts")
+    excerpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(default=timezone.now)
