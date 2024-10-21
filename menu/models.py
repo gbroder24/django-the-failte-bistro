@@ -17,3 +17,12 @@ class Menu(models.Model):
     hearts = models.ManyToManyField(User, blank=True, related_name="hearts")
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(default=timezone.now)
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    content = models.TextField()
+    approved = models.BooleanField(default=False)
+    commented_on = models.DateTimeField(default=timezone.now)
+    likes = models.ManyToManyField(User, blank=True, related_name="likes")
