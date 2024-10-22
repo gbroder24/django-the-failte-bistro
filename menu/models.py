@@ -7,7 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
-class Menu(models.Model):
+class Dish(models.Model):
     dish_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="dish_posts")
@@ -28,7 +28,7 @@ class Menu(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(Dish, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     content = models.TextField()
     approved = models.BooleanField(default=False)
