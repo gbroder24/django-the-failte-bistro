@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Menu
 
 # Create your views here.
-def menu_failte_bistro(request):
-    return HttpResponse("This must be the menu page.")
+class MenuList(generic.ListView):
+    model = Menu
