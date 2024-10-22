@@ -4,4 +4,5 @@ from .models import Menu
 
 # Create your views here.
 class MenuList(generic.ListView):
-    model = Menu
+    queryset = Menu.objects.all()
+    template_name = "menu_list.html"
