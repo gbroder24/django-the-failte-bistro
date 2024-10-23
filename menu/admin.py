@@ -6,9 +6,9 @@ from .models import Dish, Comment
 @admin.register(Dish)
 class MenuAdmin(SummernoteModelAdmin):
 
-    list_display = ('dish_title', 'slug', 'status')
-    search_fields = ['title']
-    list_filter = ('status',)
+    list_display = ('dish_title', 'slug', 'status', 'posted_on')
+    search_fields = ['title', 'content']
+    list_filter = ('status', 'posted_on')
     prepopulated_fields = {'slug': ('dish_title',)}
     summernote_fields = ('content',)
 
