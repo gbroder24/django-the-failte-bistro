@@ -18,7 +18,7 @@
                                     <p class="author">Author: {{ dish.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
                                 <h2 class="card-title">{{ dish.dish_title }}</h2>
                                 <p class="card-text">{{ dish.excerpt }}</p>
                             </a>
