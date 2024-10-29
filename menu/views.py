@@ -6,4 +6,3 @@ from .models import Dish
 class MenuList(generic.ListView):
     queryset = Dish.objects.filter(status=1)
     template_name = "menu/menu_list.html"
-    paginate_by = 6
