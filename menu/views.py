@@ -10,16 +10,16 @@ class MenuList(generic.ListView):
 
 def menu_detail(request, slug):
     """
-    Display an individual :model:`menu.Dish`.
+    Display an individual :model:`blog.Post`.
 
     **Context**
 
     ``post``
-        An instance of :model:`menu.Dish`.
+        An instance of :model:`blog.Post`.
 
     **Template:**
 
-    :template:`menu/menu_detail.html`
+    :template:`blog/post_detail.html`
     """
 
     queryset = Dish.objects.filter(status=1)

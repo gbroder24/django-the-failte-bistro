@@ -1,6 +1,7 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'menu' as menu_url %}
+{% url 'booking' as booking_url %}
 
 {% load static %}
 
@@ -61,7 +62,7 @@
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                             href="#">Login</a>
                     </li>
-
+                    <a class="btn btn-primary" href="{% url 'booking' %}" role="button">Make a Booking</a>
                 </ul>
                 <span class="navbar-text text-muted">
                     adventures of a software developer

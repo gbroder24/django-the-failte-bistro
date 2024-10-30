@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 {% load static %}
 
 <div class="masthead">
@@ -7,9 +6,9 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- dish title goes in these h1 tags -->
-                <h1 class="post-title">{{ dish.title }}</h1>
+                <h1 class="post-title">{{ dish.dish_title }}</h1>
                 <!-- dish author goes before the | the dish's posted date goes after -->
-                <p class="post-subtitle">{{ dish.author }} | {{ dish.created_on }}</p>
+                <p class="post-subtitle">{{ dish.author }} | {{ dish.posted_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
