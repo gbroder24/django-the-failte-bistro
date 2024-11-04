@@ -1,7 +1,8 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'menu' as menu_url %}
-{% url 'booking' as booking_url %}
+{% url 'reservations' as reservations_url %}
+{% url 'create_booking' as create_booking_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -13,12 +14,19 @@
 
 <head>
     <title>Failte Bistro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Restaurant web page and booking tool for The Failte Bistro in Limerick Ireland." name="description">
+    <meta content="fine-dining award winning bistro restaurant dinner Limerick Ireland" name="keywords">
+
+    <!-- Favicons -->
+
 
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -58,6 +66,10 @@
                             href="{% url 'menu' %}">Menu</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item"></li>
+                    <a class="nav-link {% if request.path == reservations_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'reservations' %}">Reservations</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
@@ -72,16 +84,40 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                    <a class="btn btn-primary" href="{% url 'booking' %}" role="button">Make a Booking</a>
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
+                {% if user.is_authenticated %}
+                <a class="btn-book-a-table" href="{% url 'create_booking' %}">Book a Table</a>
+                {% else %}
+                <a class="btn-book-a-table" href="{% url 'account_login' %}">Book a Table</a>
+                {% endif %}
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
             </div>
         </div>
     </nav>
 
+    <!-- displaying Django messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+            fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <main class="flex-shrink-0 main-bg">
+
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->
