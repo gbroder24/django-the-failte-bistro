@@ -33,19 +33,21 @@ def create_booking(request):
     if request.method == 'POST':
         form = BookingForm(data=request.POST)
         if form.is_valid():
-            booking = form.save(commit=False)
-            booking.guest = request.user
-            booking.save()
+            reservation = form.save(commit=False)
+            reservation.customer = request.user
+            reservation.save()
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Booking Confirmed, We Look Forward to Seeing you")
+                "Reservation Confirmed, We Look Forward to Seeing you")
             return redirect('reservations')
         else:
             messages.add_message(
                 request,
                 messages.ERROR,
                 list(form.errors.values())[0])
+            
+
     form = BookingForm()
     return render(
         request,

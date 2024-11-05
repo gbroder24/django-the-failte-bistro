@@ -92,3 +92,28 @@
     padding-top: 30px;
     border-top: 1px solid #ffffff;
 }
+
+/* Custom Styles */
+#booking-form {
+    background-color: #f8f9fa; /* Light background for form */
+}
+
+#booking-form button {
+    font-size: 1.1rem; /* Slightly larger text on the button */
+    padding: 0.75rem 1.25rem; /* Adjust button padding */
+}
+
+#booking-form input, #booking-form select, #booking-form textarea {
+    margin-bottom: 1.25rem; /* Add spacing between form fields */
+}
+
+#booking-form .form-control {
+    border-radius: 0.5rem; /* Rounded corners for input fields */
+}
+
+/* Hover effect on submit button */
+#booking-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3; /* Match the border color */
+}
+

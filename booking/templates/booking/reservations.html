@@ -1,7 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
-<!-- index.html content starts here -->
-This is the reservations page.
-<!-- index.html content ends here -->
+<!-- reservations.html content starts here -->
+
+<div class="hero form container mt-5"></div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 my-5">
+            <h2>Your Reservations</h2>
+            <div class="row">
+                {% for reservation in reservations %}
+                <div class="card col" style="width: 18rem; margin: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ reservation.first_name }} {{ reservation.last_name }}</h5>
+                        <p class="card-text"><strong>Date:</strong> {{ reservation.date }}</p>
+                        <p class="card-text"><strong>Time:</strong> {{ reservation.time }}</p>
+                        <p class="card-text"><strong>Guests:</strong> {{ reservation.num_of_guests }}</p>
+                        <div class="container">
+                            <div class="row">
+                                <a href="edit/{{ reservation.id }}" class="btn btn-book-a-table" style="margin-bottom: 5px;">Edit</a>
+                                <a href="delete/{{ reservation.id }}" data-bs-toggle="modal" class="btn btn-danger"
+                                    data-bs-target="#delete_modal{{ reservation.id }}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% empty %}
+                <p>You have no upcoming reservations. You can make one 
+                    <a href="{% url 'create_booking' %}"><strong>here</strong></a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- reservations.html content ends here -->
 {% endblock %}
