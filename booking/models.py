@@ -22,14 +22,14 @@ HOURS = (
 )
 
 GUESTS = (
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5'),
-    ('6', '6'),
-    ('7', '7'),
-    ('8', '8'),
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
 )
 
 
@@ -48,8 +48,8 @@ class Reservation(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     date = models.DateField(validators=[validate_date])
-    time = models.CharField(choices=HOURS, default='19:00', max_length=10)
-    num_of_guests = models.IntegerField(choices=GUESTS, default='4')
+    time = models.CharField(choices=HOURS, default='19:00', max_length=13)
+    num_of_guests = models.IntegerField(choices=GUESTS, default=4)
     phoneValidate = RegexValidator(
         regex = r'^[0-9]+$',
         message = "Enter a valid phone number.",

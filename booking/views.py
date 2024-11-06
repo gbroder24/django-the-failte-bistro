@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import BookingForm
 from .models import Reservation
+from .forms import BookingForm
 
 # Create your views here.
 
@@ -31,9 +31,10 @@ def create_booking(request):
     desired booking for the guest.
     """
     if request.method == 'POST':
-        form = BookingForm(data=request.POST)
-        if form.is_valid():
-            reservation = form.save(commit=False)
+        print("Received a POST request")
+        booking_form = BookingForm(data=request.POST)
+        if booking_form.is_valid():
+            reservation = booking_form.save(commit=False)
             reservation.customer = request.user
             reservation.save()
             messages.add_message(
@@ -45,12 +46,11 @@ def create_booking(request):
             messages.add_message(
                 request,
                 messages.ERROR,
-                list(form.errors.values())[0])
-            
-
-    form = BookingForm()
+                list(booking_form.errors.values())[0])
+    booking_form = BookingForm()
+    print("About to render template")
     return render(
         request,
         "booking/create_booking.html",
-        {'booking_form': form}
+        {'booking_form': booking_form}
     )
