@@ -54,3 +54,40 @@ def create_booking(request):
         "booking/create_booking.html",
         {'booking_form': booking_form}
     )
+
+
+def edit_reservation(request, reservation_id):
+    """
+    The view for editing a currently existing booking, validates the current user
+    or redirects back to reservations. Autofills form with current data stored
+    in the booking.
+    """
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    if request.user == reservation.customer:
+        if request.method == 'POST':
+            booking_form = BookingForm(data=request.POST, instance=reservation)
+            if booking_form.is_valid():
+                reservation.save()
+                messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    "Booking Updated. See you soon!")
+                return redirect('reservations')
+            else:
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    list(booking_form.errors.values())[0])
+    else:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            "ERROR: Only the Guest who made the reservation has permission to change a reservation."
+        )
+        return redirect('reservations')
+    booking_form = BookingForm(instance=reservation)
+    return render(
+        request,
+        "booking/edit_booking.html",
+        {'booking_form': booking_form}
+    )

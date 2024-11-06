@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- edit_booking.html content starts here -->
+
+<div class="hero form container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 my-5">
+            <h2 class="text-center mb-4">Update Reservation</h2>
+
+            <p class="text-center mb-4">
+                Please enter the details for your new booking. Please be aware that any last-minute changes could affect your experience. 
+                Be sure to contact the restaurant with any special dietary requirements.
+            </p>
+
+            <form id="booking-form" method="POST" class="shadow-sm p-4 rounded bg-light">
+                {% csrf_token %}
+                {{ booking_form|crispy }}
+
+                <button type="submit" class="btn btn-primary w-100 mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- edit_booking.html content ends here -->
+{% endblock %}

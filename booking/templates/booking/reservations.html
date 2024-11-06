@@ -18,7 +18,7 @@
                         <p class="card-text"><strong>Guests:</strong> {{ reservation.num_of_guests }}</p>
                         <div class="container">
                             <div class="row">
-                                <a href="edit/{{ reservation.id }}" class="btn btn-book-a-table" style="margin-bottom: 5px;">Edit</a>
+                                <a href="edit/{{ reservation.id }}" class="btn btn-primary" style="margin-bottom: 5px;">Edit</a>
                                 <a href="delete/{{ reservation.id }}" data-bs-toggle="modal" class="btn btn-danger"
                                     data-bs-target="#delete_modal{{ reservation.id }}">Delete</a>
                             </div>
