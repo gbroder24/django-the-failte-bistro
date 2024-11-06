@@ -26,6 +26,26 @@
                     </div>
                 </div>
 
+                <!-- Modal for Deleting a Reservation -->
+                <div class="modal fade" id="delete_modal{{ reservation.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ reservation.id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel{{ reservation.id }}">Confirm Deletion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this reservation for {{ reservation.first_name }} {{ reservation.last_name }}?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <a href="delete/{{ reservation.id }}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 {% empty %}
                 <p>You have no upcoming reservations. You can make one 
                     <a href="{% url 'create_booking' %}"><strong>here</strong></a></p>

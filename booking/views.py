@@ -91,3 +91,27 @@ def edit_reservation(request, reservation_id):
         "booking/edit_booking.html",
         {'booking_form': booking_form}
     )
+
+
+def delete_reservation(request, reservation_id):
+    """
+    The View that deletes the desired booking, requires the
+    user that made the booking otherwise will redirect back
+    to reservations.
+    """
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    if request.user == reservation.customer:
+        reservation.delete()
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            "Your reservation has been cancelled."
+        )
+        return redirect('reservations')
+    else:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            "ERROR: Only the Guest who made the reservation has permission to cancel."
+        )
+        return redirect('reservations')
