@@ -117,13 +117,43 @@
     border-color: #0056b3; /* Match the border color */
 }
 
-/* Remove the outline around the button */
-button.heart-button {
-    outline: none;  /* Removes the default focus outline */
-    border: none;   /* Optional: Remove the button border if any */
-    background: none; /* Optional: Remove any background color or background image */
-    padding: 0;     /* Optional: Remove extra padding if it’s not needed */
+/* Custom hover effect */
+.card-hover:hover {
+    transform: scale(1.05);  /* Slightly increase the size */
+    transition: transform 0.3s ease;  /* Smooth transition */
 }
 
+/* Remove default link styles */
+.card .post-link {
+    text-decoration: none;      /* Remove underline */
+    color: inherit;             /* Make the text color inherit from the parent element */
+}
 
+/* Optional: Style the card text to look like normal text */
+.card .post-link .card-title, 
+.card .post-link .card-text {
+    color: #333;  /* Darker color for the text */
+}
+
+.card .post-link:hover {
+    text-decoration: none;  /* Remove underline on hover */
+    color: inherit;         /* Ensure the color stays consistent on hover */
+}
+
+/* Heart Button Hover Effect */
+.heart-button {
+    text-decoration: none;  /* Remove underline on hover */
+    color: #333;  /* Darker color for the text */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart-button:hover {
+    transform: scale(1.1);
+    color: #d9534f; /* Slight red shade on hover */
+}
+
+/* Animate heart on click */
+.heart-button:active {
+    transform: scale(0.9);
+}
 

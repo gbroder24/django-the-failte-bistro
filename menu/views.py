@@ -50,14 +50,14 @@ def menu_detail(request, slug):
                 dish.hearts.remove(request.user)
                 messages.add_message(
                     request, messages.INFO,
-                    'You unhearted this dish.'
+                    'You did not love this dish.'
                 )
             else:
                 # Add heart
                 dish.hearts.add(request.user)
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'You hearted this dish!'
+                    'You loved this dish!'
                 )
         else:
             messages.add_message(

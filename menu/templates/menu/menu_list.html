@@ -12,27 +12,28 @@
             <div class="row">
                 {% for dish in dish_list %}
                     {% if dish.category == 'starter' %}
-                        <div class="col-md-4">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="image-container">
-                                        {% if "placeholder" in dish.featured_image.url %}
-                                        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                            alt="placeholder image">
-                                        {% else %}
-                                        <img class="card-img-top" src=" {{ dish.featured_image.url }}"
-                                            alt="{{ dish.title }}">
-                                        {% endif %}
-                                        <div class="image-flash">
-                                            <p class="author">Author: {{ dish.author }}</p>
-                                        </div>
-                                    </div>
+                        <!-- Grid column classes updated for responsiveness -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
                                     <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
+                                        <div class="card mb-4 card-hover">
+                                            <div class="card-body">
+                                                <div class="image-container">
+                                                    {% if "placeholder" in dish.featured_image.url %}
+                                                    <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                                        alt="placeholder image">
+                                                    {% else %}
+                                                    <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
+                                                        alt="{{ dish.dish_title }}">
+                                                    {% endif %}
+                                                    <div class="image-flash">
+                                                        <p class="author">Author: {{ dish.author }}</p>
+                                                    </div>
+                                                </div>
                                         <h2 class="card-title">{{ dish.dish_title }}</h2>
                                         <p class="card-text">{{ dish.excerpt }}</p>
+                                        <hr>
+                                        <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                     </a>
-                                    <hr />
-                                    <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +41,7 @@
                         <div class="row">
                         {% endif %}
                     {% endif %}
-                {% endfor %}  
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -52,31 +53,32 @@
             <div class="row">
                 {% for dish in dish_list %}
                     {% if dish.category == 'main' %}
-                        <div class="col-md-4">
-                            <div class="card mb-4">
+                        <!-- Grid column classes updated for responsiveness -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                            <div class="card mb-4 card-hover">
                                 <div class="card-body">
-                                    <div class="image-container">
-                                        {% if "placeholder" in dish.featured_image.url %}
-                                        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                            alt="placeholder image">
-                                        {% else %}
-                                        <img class="card-img-top" src=" {{ dish.featured_image.url }}"
-                                            alt="{{ dish.title }}">
-                                        {% endif %}
-                                        <div class="image-flash">
-                                            <p class="author">Author: {{ dish.author }}</p>
-                                        </div>
-                                    </div>
                                     <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
+                                        <div class="image-container">
+                                            {% if "placeholder" in dish.featured_image.url %}
+                                            <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                                alt="placeholder image">
+                                            {% else %}
+                                            <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
+                                                alt="{{ dish.dish_title }}">
+                                            {% endif %}
+                                            <div class="image-flash">
+                                                <p class="author">Author: {{ dish.author }}</p>
+                                            </div>
+                                        </div>
                                         <h2 class="card-title">{{ dish.dish_title }}</h2>
                                         <p class="card-text">{{ dish.excerpt }}</p>
+                                        <hr>
+                                        <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                     </a>
-                                    <hr />
-                                    <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:5 %}
+                        {% if forloop.counter|divisibleby:4 %}
                         <div class="row">
                         {% endif %}
                     {% endif %}
@@ -92,31 +94,32 @@
             <div class="row">
                 {% for dish in dish_list %}
                     {% if dish.category == 'dessert' %}
-                        <div class="col-md-4">
-                            <div class="card mb-4">
+                        <!-- Grid column classes updated for responsiveness -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                            <div class="card mb-4 card-hover">
                                 <div class="card-body">
-                                    <div class="image-container">
-                                        {% if "placeholder" in dish.featured_image.url %}
-                                        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                            alt="placeholder image">
-                                        {% else %}
-                                        <img class="card-img-top" src=" {{ dish.featured_image.url }}"
-                                            alt="{{ dish.title }}">
-                                        {% endif %}
-                                        <div class="image-flash">
-                                            <p class="author">Author: {{ dish.author }}</p>
-                                        </div>
-                                    </div>
                                     <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
+                                        <div class="image-container">
+                                            {% if "placeholder" in dish.featured_image.url %}
+                                            <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                                alt="placeholder image">
+                                            {% else %}
+                                            <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
+                                                alt="{{ dish.dish_title }}">
+                                            {% endif %}
+                                            <div class="image-flash">
+                                                <p class="author">Author: {{ dish.author }}</p>
+                                            </div>
+                                        </div>
                                         <h2 class="card-title">{{ dish.dish_title }}</h2>
                                         <p class="card-text">{{ dish.excerpt }}</p>
+                                        <hr>
+                                        <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                     </a>
-                                    <hr />
-                                    <p class="card-text text-muted h6">{{ dish.posted_on }}</p>
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:3 %}
+                        {% if forloop.counter|divisibleby:4 %}
                         <div class="row">
                         {% endif %}
                     {% endif %}
@@ -124,6 +127,7 @@
             </div>
         </div>
     </div>
+    
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -136,8 +140,6 @@
         </ul>
     </nav>
     {% endif %}
-    
 </div>
-
 <!-- index.html content ends here -->
 {% endblock %}

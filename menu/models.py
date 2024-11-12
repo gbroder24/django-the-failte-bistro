@@ -42,9 +42,9 @@ class Dish(models.Model):
         Method to enforce image upload restriction to admins only.
         Check if image is being added by a non-admin user.
         """
-        if self.image and not self.author.is_staff:
-            raise ValueError("Only admin can upload images.")
-        
+        if self.featured_image != 'placeholder' and not self.author.is_staff:
+            raise ValidationError("Only admin can upload images.")
+
         super(Dish, self).save(*args, **kwargs)
 
 
