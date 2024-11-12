@@ -116,3 +116,14 @@
     background-color: #0056b3; /* Darker blue on hover */
     border-color: #0056b3; /* Match the border color */
 }
+
+/* Remove the outline around the button */
+button.heart-button {
+    outline: none;  /* Removes the default focus outline */
+    border: none;   /* Optional: Remove the button border if any */
+    background: none; /* Optional: Remove any background color or background image */
+    padding: 0;     /* Optional: Remove extra padding if it’s not needed */
+}
+
+
+

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -8,6 +9,13 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 
 class Dish(models.Model):
+
+    CATEGORY_CHOICES = [
+        ('starter', 'Starter'),
+        ('main', 'Main Course'),
+        ('dessert', 'Dessert'),
+    ]
+
     dish_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="dish_posts")
@@ -17,6 +25,7 @@ class Dish(models.Model):
     hearts = models.ManyToManyField(User, blank=True, related_name="hearts")
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(default=timezone.now)
+    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
 
 
     class Meta():
@@ -25,6 +34,17 @@ class Dish(models.Model):
 
     def __str__(self):
         return f"{self.dish_title}"
+
+
+    def save(self, *args, **kwargs):
+        """
+        Method to enforce image upload restriction to admins only.
+        Check if image is being added by a non-admin user.
+        """
+        if self.image and not self.author.is_staff:
+            raise ValueError("Only admin can upload images.")
+        
+        super(Dish, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

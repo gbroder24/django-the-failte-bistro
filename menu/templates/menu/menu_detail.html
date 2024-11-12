@@ -4,22 +4,22 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row justify-content-center mt-3">
             <div class="col-md-6 masthead-text">
                 <!-- dish title goes in these h1 tags -->
                 <h1 class="post-title">{{ dish.dish_title }}</h1>
                 <!-- dish author goes before the | the dish's posted date goes after -->
                 <p class="post-subtitle">{{ dish.author }} | {{ dish.posted_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+            <div class="col-lg-12 masthead-text">
+                
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center mt-3">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The dish content goes inside the card-text. -->
@@ -31,15 +31,27 @@
         </div>
     </div>
       <!-- Displaying count of comments -->
-  <div class="row">
-    <div class="col-12">
+  <div class="d-flex flex-row">
+    
       <strong class="text-secondary">
-        <i class="far fa-comments"></i> {{ comment_count }}
+          <i class="far fa-comments"></i> {{ comment_count }}
+          <form method="POST" action="{% url 'menu_detail' slug=dish.slug %}">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.path }}">
+            <button type="hidden" class="heart-button" name="heart" type="submit">
+                {% if request.user in dish.hearts.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+                <span>{{ heart_count }}</span>
+            </button>
+          </form>
+        
       </strong>
-    </div>
-    <div class="col-12">
-      <hr>
-    </div>
+
+    
+    
   </div>
   <!-- Displaying Comments -->
   <div class="row">
