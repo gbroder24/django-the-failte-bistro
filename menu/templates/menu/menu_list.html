@@ -16,11 +16,16 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="image-container">
-                                        <img class="card-img-top" src="{{ dish.image }}" alt="{{ dish.dish_title }}">
+                                        {% if "placeholder" in dish.featured_image.url %}
+                                        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                            alt="placeholder image">
+                                        {% else %}
+                                        <img class="card-img-top" src=" {{ dish.featured_image.url }}"
+                                            alt="{{ dish.title }}">
+                                        {% endif %}
                                         <div class="image-flash">
                                             <p class="author">Author: {{ dish.author }}</p>
                                         </div>
-                                        
                                     </div>
                                     <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
                                         <h2 class="card-title">{{ dish.dish_title }}</h2>

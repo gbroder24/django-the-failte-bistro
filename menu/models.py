@@ -26,7 +26,8 @@ class Dish(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(default=timezone.now)
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
-
+    featured_image = CloudinaryField('image', default='placeholder')
+    
 
     class Meta():
         ordering = ["-posted_on"]
