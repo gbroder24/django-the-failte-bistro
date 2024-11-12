@@ -1,0 +1,146 @@
+[
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Smoked Salmon & Crab Roulade",
+            "slug": "smoked-salmon-crab-roulade",
+            "author": 1,
+            "content": "<p>Served with beetroot gel, rocket leaves, toasted almonds & cucumber dill, Greek yoghurt dressing.</p>",
+            "posted_on": "2024-10-14T13:58:53.884Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Served with beetroot gel...",
+            "updated_on": "2024-11-12T12:34:56Z",
+            "category": "starter"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Chicken Liver Paté",
+            "slug": "chicken-liver-pate",
+            "author": 1,
+            "content": "<p>Rich and buttery paté served with toasted breads, red onion jam, apple chutney & salad garnish.</p>",
+            "posted_on": "2024-07-14T14:00:47.759Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Rich and buttery paté served with...",
+            "updated_on": "2024-11-11T12:34:56Z",
+            "category": "starter"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Goats Cheese Salad",
+            "slug": "goats-cheese-salad",
+            "author": 1,
+            "content": "<p>Locally produced warm goats cheese, served on a bed of seasonal leaves, cucumber, slow roasted red peppers and walnuts in a honey mustard dressing.</p>",
+            "posted_on": "2024-07-14T14:01:24.838Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Locally produced warm goats cheese...",
+            "updated_on": "2024-11-10T12:34:56Z",
+            "category": "starter"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Gourmet Steak Burger",
+            "slug": "gourmet-steak-burger",
+            "author": 1,
+            "content": "<p>Succulent homemade steak burger with red onion, beef tomato, house pickles, roasted tomato relish on a lightly toasted brioche bun & served with house cut chips.</p>",
+            "posted_on": "2024-09-04T13:51:34.009Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Succulent homemade steak burger with...",
+            "updated_on": "2024-11-09T12:34:56Z",
+            "category": "main"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Wild Prawn Tagliatelle",
+            "slug": "wild-prawn-tagliatelle",
+            "author": 1,
+            "content": "<p>Prawns & tagliatelle pasta in a creamy white wine sauce with spinach & cherry tomatoes.</p>",
+            "posted_on": "2024-09-04T13:59:56.703Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Prawns & tagliatelle pasta in a...",
+            "updated_on": "2024-11-08T12:34:56Z",
+            "category": "main"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Irish Chicken Supreme",
+            "slug": "irish-chicken-supreme",
+            "author": 1,
+            "content": "<p>Corn-fed roasted chicken served with homemade apple sausage & mint stuffing, sauteed potatoes, fresh market vegetables in a posmy mushroom sauce.</p>",
+            "posted_on": "2024-09-04T14:09:27.860Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Corn-fed roasted chicken served with...",
+            "updated_on": "2024-11-07T12:34:56Z",
+            "category": "main"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Selection of Ice Cream",
+            "slug": "selection-of-ice-cream",
+            "author": 1,
+            "content": "<p>Please ask your server for todays tempting selection.</p>",
+            "posted_on": "2024-09-06T10:55:41.904Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Please ask your server for todays tempting selection.",
+            "updated_on": "2024-11-06T12:34:56Z",
+            "category": "dessert"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Chocolate Cake",
+            "slug": "chocolate-cake",
+            "author": 1,
+            "content": "<p>Moist, fudgy chocolate sponge cake with chocolate sauce & chocolate ice posm.</p>",
+            "posted_on": "2024-09-06T11:01:28.582Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "Moist, fudgy chocolate sponge cake with...",
+            "updated_on": "2024-11-05T12:34:56Z",
+            "category": "dessert"
+        }
+    },
+    {
+        "model": "menu.dish",
+        "pk": null,
+        "fields": {
+            "dish_title": "Bread & Butter Pudding",
+            "slug": "bread-butter-pudding",
+            "author": 1,
+            "content": "<p>A timeless favourite served with creme anglaise & vanilla ice cream.</p>",
+            "posted_on": "2024-09-06T11:07:26.655Z",
+            "status": 1,
+            "hearts": [],
+            "excerpt": "A timeless favourite served with...",
+            "updated_on": "2024-11-04T12:34:56Z",
+            "category": "dessert"
+        }
+    }
+]
