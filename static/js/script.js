@@ -1,1 +1,0 @@
-console.log("This is a message from the script.js file in the static/js directory!")

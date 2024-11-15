@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Dish
+from django.http import HttpResponseRedirect
+from .models import Dish, Comment
 from .forms import CommentForm
 
 # Create your views here.
@@ -18,7 +19,7 @@ def menu_detail(request, slug):
     ``dish``: The dish object being viewed.
     ``comments``: A list of comments on the dish.
     ``comment_count``: Total number of approved comments.
-    ``heart_count``: Total number of hearts (likes) given to the dish.
+    ``like_count``: Total number of likes (likes) given to the dish.
     ``comment_form``: Form to submit a comment.
 
     **Template**: menu/menu_detail.html
@@ -80,3 +81,88 @@ def menu_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+    # Handle liking a comment
+    if request.method == "POST" and "like" in request.POST:
+        comment_id = request.POST.get("comment_id")
+        comment = get_object_or_404(Comment, id=comment_id)
+
+        if request.user.is_authenticated:
+            # Check if the user already liked the comment
+            if request.user in comment.likes.all():
+                comment.likes.remove(request.user)
+                messages.add_message(
+                    request, messages.INFO,
+                    'You unliked this comment.'
+                )
+            else:
+                comment.likes.add(request.user)
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    'You liked this comment!'
+                )
+        else:
+            messages.add_message(
+                request, messages.WARNING,
+                'You need to be logged in to like a comment.'
+            )
+
+    # Calculate heart counts
+    heart_count = dish.hearts.count()
+
+    # Include the like count for each comment
+    comment_form = CommentForm()
+
+    return render(
+        request,
+        "menu/menu_detail.html",
+        {
+            "dish": dish,
+            "comments": comments,
+            "comment_count": comment_count,
+            "heart_count": heart_count,
+            "comment_form": comment_form,
+        },
+    )
+
+
+def comment_edit(request, slug, comment_id):
+    """
+    view to edit comments
+    """
+
+    
+    if request.method == "POST":
+
+        queryset = Dish.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
+    return HttpResponseRedirect(reverse('menu_detail', args=[slug]))
+
+
+def comment_delete(request, slug, comment_id):
+    """
+    view to delete comment
+    """
+    queryset = Dish.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('menu_detail', args=[slug]))
