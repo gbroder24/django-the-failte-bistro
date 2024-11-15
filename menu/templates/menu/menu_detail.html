@@ -87,7 +87,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ request.path }}">
                         <input type="hidden" name="comment_id" value="{{ comment.id }}">
-                        <button type="submit" class="btn btn-link heart-button" name="comment_like" aria-label="Like this comment">
+                        <button type="submit" class="btn btn-link heart-button" name="like" aria-label="Like this comment">
                             {% if request.user in comment.likes.all %}
                                 <!-- Filled Heart Icon -->
                                 <i class="fas fa-thumbs-up"></i>

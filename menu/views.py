@@ -32,6 +32,7 @@ def menu_detail(request, slug):
     
     
     if request.method == "POST":
+        print("comment!")
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
@@ -44,6 +45,7 @@ def menu_detail(request, slug):
             )
 
     if request.method == "POST" and "heart" in request.POST:
+        print("heart!")
         if request.user.is_authenticated:
             # Check if the user already "hearts" the dish
             if dish.hearts.filter(id=request.user.id).exists():
@@ -65,25 +67,10 @@ def menu_detail(request, slug):
                 request, messages.WARNING,
                 'You need to be logged in to heart a dish.'
             )
-    
-    heart_count = dish.hearts.count()
-    comment_form = CommentForm()
-    
-
-    return render(
-        request,
-        "menu/menu_detail.html",
-        {
-            "dish": dish,
-            "comments": comments,
-            "comment_count": comment_count,
-            "heart_count": heart_count,
-            "comment_form": comment_form,
-        },
-    )
 
     # Handle liking a comment
     if request.method == "POST" and "like" in request.POST:
+        print("hello!")
         comment_id = request.POST.get("comment_id")
         comment = get_object_or_404(Comment, id=comment_id)
 
