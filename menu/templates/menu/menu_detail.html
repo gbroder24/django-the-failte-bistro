@@ -111,6 +111,26 @@
             {% endfor %}
         </div>
     </div>
+    <!-- Leave a New Comment Section -->
+ <div class="col-12 col-md-4">
+    <div class="card mb-4">
+        <div class="card-body">
+            {% if user.is_authenticated %}
+            <h3>Leave a comment:</h3>
+            <p>Posting as: <strong>{{ user.username }}</strong></p>
+            <form id="commentForm" method="post" class="mt-3">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button id="submitButton" type="submit" class="btn btn-primary btn-lg">Submit Comment</button>
+            </form>
+            {% else %}
+            <p>Log in to leave a comment</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Delete confirmation modal -->
