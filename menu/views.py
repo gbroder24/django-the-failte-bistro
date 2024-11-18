@@ -32,7 +32,6 @@ def menu_detail(request, slug):
     
     
     if request.method == "POST":
-        print("comment!")
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
@@ -45,7 +44,6 @@ def menu_detail(request, slug):
             )
 
     if request.method == "POST" and "heart" in request.POST:
-        print("heart!")
         if request.user.is_authenticated:
             # Check if the user already "hearts" the dish
             if dish.hearts.filter(id=request.user.id).exists():
@@ -70,7 +68,6 @@ def menu_detail(request, slug):
 
     # Handle liking a comment
     if request.method == "POST" and "like" in request.POST:
-        print("hello!")
         comment_id = request.POST.get("comment_id")
         comment = get_object_or_404(Comment, id=comment_id)
 
