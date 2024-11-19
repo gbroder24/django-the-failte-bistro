@@ -30,7 +30,7 @@ urlpatterns = [
     path('booking/', include('booking.urls'), name='booking-urls'),
     path('menu/', include('menu.urls'), name='menu-urls'),
     path('summernote/', include('django_summernote.urls')),
-    path('home/', include('home.urls'), name='home-urls'),
+    path('', include('home.urls')),
     
     # path('menu/', menu_views.menu_failte_bistro, name='menu'),
     
