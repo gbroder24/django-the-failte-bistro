@@ -46,7 +46,7 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container-fluid">
             <!-- Brand Name -->
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -55,7 +55,7 @@
 
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <!-- Home Link -->
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" 
@@ -100,9 +100,9 @@
             <!-- Book a Table Button -->
             <div class="d-flex align-items-center">
                 {% if user.is_authenticated %}
-                    <a class="btn btn-primary btn-book-a-table" href="{% url 'create_booking' %}">Book a Table</a>
+                    <a class="btn btn-success btn-book-a-table" href="{% url 'create_booking' %}">Book a Table</a>
                 {% else %}
-                    <a class="btn btn-primary btn-book-a-table" href="{% url 'account_login' %}">Book a Table</a>
+                    <a class="btn btn-success btn-book-a-table" href="{% url 'account_login' %}">Book a Table</a>
                 {% endif %}
             </div>
 
@@ -138,85 +138,86 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-4 dark-bg">
-        <div class="container">
-            <div class="row gy-3 justify-content-center text-white">
-                <!-- Address Section -->
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-geo-alt icon fs-2 me-3"></i>
-                    <div>
-                        <h4 class="text-white">Address</h4>
-                        <p class="text-white">
-                            O'Connell St <br>
-                            Limerick City, Munster, Ireland<br>
-                        </p>
-                    </div>
+   <!-- Footer -->
+<footer class="footer mt-auto py-4 dark-bg">
+    <div class="container">
+        <div class="row gy-3 justify-content-center text-white">
+            <!-- Address Section -->
+            <div class="col-lg-3 col-md-6 col-12 d-flex">
+                <i class="bi bi-geo-alt icon fs-2 me-3"></i>
+                <div>
+                    <h4 class="text-white">Address</h4>
+                    <p class="text-white">
+                        O'Connell St <br>
+                        Limerick City, Munster, Ireland<br>
+                    </p>
                 </div>
+            </div>
 
-                <!-- Reservations Section -->
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-telephone icon fs-2 me-3 text-white"></i>
-                    <div>
-                        <h4 class="text-white">Reservations</h4>
-                        <p class="text-white">
-                            <strong>Phone:</strong> +353 61 0123456789<br>
-                            <strong>Email:</strong> enquiries@failtebistro.com<br>
-                        </p>
-                    </div>
+            <!-- Reservations Section -->
+            <div class="col-lg-3 col-md-6 col-12 d-flex">
+                <i class="bi bi-telephone icon fs-2 me-3 text-white"></i>
+                <div>
+                    <h4 class="text-white">Reservations</h4>
+                    <p class="text-white">
+                        <strong>Phone:</strong> +353 61 0123456789<br>
+                        <strong>Email:</strong> enquiries@failtebistro.com<br>
+                    </p>
                 </div>
+            </div>
 
-                <!-- Opening Hours Section -->
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-clock icon fs-2 me-3 text-white"></i>
-                    <div>
-                        <h4 class="text-white">Opening Hours</h4>
-                        <p class="text-white">
-                            <strong>Monday-Sunday: </strong>5pm - 11:30PM
-                        </p>
-                    </div>
+            <!-- Opening Hours Section -->
+            <div class="col-lg-3 col-md-6 col-12 d-flex">
+                <i class="bi bi-clock icon fs-2 me-3 text-white"></i>
+                <div>
+                    <h4 class="text-white">Opening Hours</h4>
+                    <p class="text-white">
+                        <strong>Monday-Sunday: </strong>5pm - 11:30PM
+                    </p>
                 </div>
+            </div>
 
-                <!-- Follow Us Section -->
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white">Follow Us</h4>
-                    <div class="social-links d-flex justify-content-start">
-                        <a href="https://twitter.com/" target="_blank" class="text-white me-3">
-                            <i class="bi bi-twitter fs-3"></i>
-                        </a>
-                        <a href="https://facebook.com/" target="_blank" class="text-white me-3">
-                            <i class="bi bi-facebook fs-3"></i>
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" class="text-white me-3">
-                            <i class="bi bi-instagram fs-3"></i>
-                        </a>
-                    </div>
+            <!-- Follow Us Section -->
+            <div class="col-lg-3 col-md-6 col-12">
+                <h4 class="text-white">Follow Us</h4>
+                <div class="social-links d-flex justify-content-start">
+                    <a href="https://twitter.com/" target="_blank" class="text-white me-3">
+                        <i class="bi bi-twitter fs-3"></i>
+                    </a>
+                    <a href="https://facebook.com/" target="_blank" class="text-white me-3">
+                        <i class="bi bi-facebook fs-3"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" class="text-white me-3">
+                        <i class="bi bi-instagram fs-3"></i>
+                    </a>
                 </div>
+            </div>
 
-                <!-- Google Map Embed Section (Limerick) -->
-                <div class="col-6 mt-4">
-                    <h4 class="text-white text-center">Our Location</h4>
-                    <div class="embed-responsive embed-responsive-16by9 mt-4">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2419.89876359269!2d-8.63143102295435!3d52.66180612572065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b5c641fbdd1b7%3A0x36b1b88d861febc!2sO&#39;Connell%20St%2C%20Prior&#39;s-Land%2C%20Limerick!5e0!3m2!1sen!2sie!4v1730812495210!5m2!1sen!2sie"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+            <!-- Google Map Embed Section (Limerick) -->
+            <div class="col-12 mt-4">
+                <h4 class="text-white text-center">Our Location</h4>
+                <div class="embed-responsive embed-responsive-16by9 mt-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2419.89876359269!2d-8.63143102295435!3d52.66180612572065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b5c641fbdd1b7%3A0x36b1b88d861febc!2sO&#39;Connell%20St%2C%20Prior&#39;s-Land%2C%20Limerick!5e0!3m2!1sen!2sie!4v1730812495210!5m2!1sen!2sie"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+            </div>
 
-                <!-- Copyright Section -->
-                <div class="col-md-8 text-center mt-4">
-                    <div class="copyright">
-                        <p class="m-0 text-white">
-                            {% block copyright %}
-                            Developed by Gary Broderick for Code Institute's Portfolio Project 4 - 2024
-                            {% endblock copyright %}
-                        </p>
-                    </div>
+            <!-- Copyright Section -->
+            <div class="col-12 text-center mt-4">
+                <div class="copyright">
+                    <p class="m-0 text-white">
+                        {% block copyright %}
+                        Developed by Gary Broderick for Code Institute's Portfolio Project 4 - 2024
+                        {% endblock copyright %}
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
 
 
         <!-- Bootstrap JS (optional for interactive features) -->

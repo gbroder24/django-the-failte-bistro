@@ -7,7 +7,7 @@
 .brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #004d00; /* Dark green for the brand color */
+    color: #198754; /* Dark green for the brand color */
 }
 
 /* Style for the 'Book a Table' button */
@@ -19,7 +19,13 @@
 
 /* Customize navbar active link color */
 .navbar-nav .nav-link.active {
-    color: #007bff; /* Active link color */
+    color: #198754; /* Active link color */
+    font-weight: bold;
+}
+
+/* Adjust the spacing of the navbar items */
+.navbar-nav .nav-item {
+    padding: 0 20px;
 }
 
 /* Mobile Navigation Toggle (hamburger menu) */
