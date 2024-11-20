@@ -40,15 +40,6 @@
     }
 }
 
-/* Custom Styling for Messages */
-.alert {
-    font-size: 1.1rem;
-    padding: 1rem;
-    border-radius: 0.375rem; /* Bootstrap default border-radius */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px; /* Space between messages */
-}
-
 /* Style for Success Messages */
 .alert-success {
     border-left: 5px solid #28a745; /* Green border */
