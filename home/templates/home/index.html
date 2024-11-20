@@ -1,8 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <!-- index.html content starts here -->
-This is the home page.
+
+<section id="hero" class="hero d-flex align-items-center section-bg">
+    <div class="container">
+        <div class="row justify-content-center gy-5">
+            <div class="col-lg-6 col-md-8 text-center">
+                <!-- Wrapper for darkened background behind text -->
+                <div class="hero-text-background p-4">
+                    <h2 class="hero-title" data-aos="fade-up">Where Else</h2>
+                    <h2 class="hero-title main-title" data-aos="fade-up">The Failte Bistro</h2>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="100">
+                        Aged Beef... Fresh Seafood... 
+                        <br>...Local Ingredients.
+                    </p>
+                    <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        {% if user.is_authenticated %}
+                            <a class="btn btn-primary btn-book-a-table" href="{% url 'create_booking' %}">Book a Table</a>
+                        {% else %}
+                            <a class="btn btn-primary btn-book-a-table" href="{% url 'account_login' %}">Book a Table</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 <!-- index.html content ends here -->
 {% endblock %}
 
