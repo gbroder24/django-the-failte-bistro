@@ -16,7 +16,7 @@
     <title>Failte Bistro</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Restaurant web page and booking tool for The Failte Bistro in Limerick Ireland." name="description">
+    <meta content="Restaurant web page, menu dish post and comment tool and booking tool for The Failte Bistro in Limerick Ireland." name="description">
     <meta content="fine-dining award winning bistro restaurant dinner Limerick Ireland" name="keywords">
 
     <!-- Favicons -->
@@ -116,12 +116,12 @@
     </nav>
 
     <!-- Displaying Django messages -->
-    <div class="container mt-3">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
                     <!-- Bootstrap alert classes with dynamic message types -->
-                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="msg">
                         {{ message | safe }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -130,14 +130,7 @@
         </div>
     </div>
 
-
     <main class="flex-shrink-0 main-bg">
-
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->
@@ -231,8 +224,9 @@
 
     
 
-    {% block extras %}
-    {% endblock %}
+        {% block extras %}
+        <script src="{% static 'js/messages.js' %}"></script>
+        {% endblock %}
 </body>
 
 </html>
