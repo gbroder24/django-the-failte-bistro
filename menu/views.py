@@ -31,6 +31,7 @@ def menu_detail(request, slug):
     comment_count = dish.comments.filter(approved=True).count()
     
     
+    
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -90,6 +91,9 @@ def menu_detail(request, slug):
                 request, messages.WARNING,
                 'You need to be logged in to like a comment.'
             )
+
+    # Calculate comment counts
+    comment_count = dish.comments.count()
 
     # Calculate heart counts
     heart_count = dish.hearts.count()
