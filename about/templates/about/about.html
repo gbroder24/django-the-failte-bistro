@@ -1,7 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
 
-<!-- index.html content starts here -->
-This is the about page.
-<!-- index.html content ends here -->
+<!-- about.html content starts here -->
+
+<!-- About sections -->
+<div class="container about mt-5">
+    <div class="row justify-content-center">
+        <!-- Main Section - About Content -->
+        <div class="col-lg-8 text-center mb-5">
+            <div class="section-content p-4 rounded shadow-lg bg-light">
+                <h2 class="section-title" id="about">About Us</h2>
+                <img src="{% static 'images/waiter-lg.jpg' %}" alt="Waiter serving food" class="img-fluid mx-auto d-block rounded-3 mb-4 waiter-image">
+                <div class="about-us-content">
+                    <div class="why-choose-us">
+                        <div class="section-title text-secondary"> - Discover - </div>
+                        <h3 class="text-dark">Why Choose Us?</h3>
+                        <p class="text-muted">Visit The Failte Bistro Limerick for an authentic dining experience and an inviting atmosphere. Taste the finest flavors, relax, and enjoy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row for Lists and Images -->
+        <div class="row mx-auto w-75 text-center">
+
+            <!-- Left List -->
+            <div class="list-left col-12 col-md-6 col-lg-4 mb-4 d-flex flex-column align-items-center">
+                <div class="feature-item p-3">
+                    <h5 class="mb-2"><i class="fas fa-location-arrow"></i><span class="ml-2">Location</span></h5>
+                    <p class="text-muted">For over 30 years, we have built a family business that is synonymous with Limerick, Ireland's tidiest city in 2024.</p>
+                </div>
+                <div class="feature-item p-3">
+                    <h5 class="mb-2"><i class="fas fa-star"></i><span class="ml-2">Best Bistro</span></h5>
+                    <p class="text-muted">We are proud to be the winner of Best Bistro Pub in Munster (2024), Best Seafood Bistro in Munster (2023), &amp; Best Bistro Pub in Munster (2022).</p>
+                </div>
+            </div>
+
+            <!-- Right List -->
+            <div class="list-right col-12 col-md-6 col-lg-4 mb-4 d-flex flex-column align-items-center">
+                <div class="feature-item p-3">
+                    <h5 class="mb-2"><i class="fas fa-leaf"></i><span class="ml-2">Local Ingredients</span></h5>
+                    <p class="text-muted">We refuse to compromise on quality. That's why we source our fresh ingredients from local farmers and suppliers.</p>
+                </div>
+                <div class="feature-item p-3">
+                    <h5 class="mb-2"><i class="fas fa-dog"></i><span class="ml-2">Dog Friendly</span></h5>
+                    <p class="text-muted">We understand that dogs are part of the family, which is why we welcome them with open arms!</p>
+                </div>
+            </div>
+
+            <!-- Images Section -->
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+                <div class="row w-100">
+                    <div class="col-12 col-lg-12 mb-3 d-flex justify-content-center">
+                        <img src="{% static 'images/dog-friendly.jpg' %}" alt="Happy dog" class="img-fluid rounded-3 shadow-sm dog-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                        
+<!-- about.html content ends here -->
 {% endblock %}

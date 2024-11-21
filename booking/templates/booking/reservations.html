@@ -5,12 +5,12 @@
 <!-- reservations.html content starts here -->
 
 <div class="hero form container mt-5"></div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center px-3">
         <div class="col-12 col-md-6 my-5">
-            <h2>Your Reservations</h2>
+            <h2 class="text-center">Your Reservations</h2>
             <div class="row">
                 {% for reservation in reservations %}
-                <div class="card col" style="width: 18rem; margin: 10px;">
+                <div class="card col-12 col-sm-6 col-md-4 col-lg-3" style="width: 18rem; margin: 10px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ reservation.first_name }} {{ reservation.last_name }}</h5>
                         <p class="card-text"><strong>Date:</strong> {{ reservation.date }}</p>

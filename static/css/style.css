@@ -141,6 +141,59 @@
     }
 }
 
+/* About Styles */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.feature-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fafafa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.waiter-image, .dog-img {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-us-content p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        padding: 2rem;
+    }
+
+    .list-left, .list-right {
+        margin-bottom: 2rem;
+    }
+
+    .img-fluid {
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 992px) {
+    .dog-img {
+        width: 150%;
+        height: 500px;
+    }
+}
+
 /* Custom Styles */
 #booking-form {
     background-color: #f8f9fa; /* Light background for form */
