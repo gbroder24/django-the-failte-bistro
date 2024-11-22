@@ -14,7 +14,7 @@
             </div>
 
             <!-- Dish Image (Only visible on medium and larger screens) -->
-            <div class="d-none d-md-block col-md-5 text-center masthead-image">
+            <div class="d-md-block col-md-5 text-center masthead-image">
                 {% if "placeholder" in dish.featured_image.url %}
                     <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded shadow-sm" alt="Placeholder Image">
                 {% else %}
