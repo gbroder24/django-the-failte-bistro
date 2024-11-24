@@ -36,7 +36,7 @@ GUESTS = (
 def validate_date(date):
     """
     Validates if the given date is in the past.
-    If the provided date is earlier than today's 
+    If the provided date is earlier than today's
     date than a validation error is raised.
     """
     if date < datetime.date.today():
@@ -52,24 +52,25 @@ class Reservation(models.Model):
     """
     Stores a single booking entry related to :model:`auth.User`.
     """
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customer_reservation')
+    customer = models.ForeignKey(User, on_delete=models.CASCADE,
+                                 related_name='customer_reservation')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     date = models.DateField(validators=[validate_date])
     time = models.CharField(choices=HOURS, default='19:00', max_length=13)
     num_of_guests = models.IntegerField(choices=GUESTS, default=4)
     phoneValidate = RegexValidator(
-        regex = r'^[0-9]+$',
-        message = "Enter a valid phone number.",
-        code = "Invalid Number" 
-        )
+        regex=r'^[0-9]+$',
+        message="Enter a valid phone number.",
+        code="Invalid Number"
+    )
     contact_num = models.CharField(validators=[phoneValidate], max_length=13)
-
 
     class Meta:
         ordering = ['-time', '-date']
         unique_together = ['date', 'time']
 
-
     def __str__(self):
-        return f"Reservation for {self.first_name} {self.last_name} on the {self.date} at {self.time}"
+        return f"Reservation for {self.first_name} {self.last_name}"
+        "on the {self.date} at {self.time}"
+        

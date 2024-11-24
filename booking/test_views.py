@@ -22,12 +22,12 @@ class TestBookingView(TestCase):
 
         self.reservation = Reservation(
             customer=self.user,
-            first_name= 'John',
-            last_name= 'Jones',
-            date= '2024-11-20',
-            time= '18:00',
-            num_of_guests= '2',
-            contact_num= '0812345678')
+            first_name='John',
+            last_name='Jones',
+            date='2024-11-20',
+            time='18:00',
+            num_of_guests='2',
+            contact_num='0812345678')
 
         self.reservation.save()
 
@@ -37,7 +37,6 @@ class TestBookingView(TestCase):
         """
         self.client.login(username='myUsername', password='myPassword')
         response = self.client.get(reverse('reservations'))
-        print(response.content)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'John', response.content)
         self.assertIn(b'Jones', response.content)
@@ -45,7 +44,6 @@ class TestBookingView(TestCase):
         self.assertIn(b'18:00', response.content)
         self.assertIn(b'2', response.content)
         self.assertIn(b'0812345678', response.content)
-
 
     def test_render_create_booking_page(self):
         """
@@ -55,7 +53,6 @@ class TestBookingView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(
             response.context['booking_form'], BookingForm)
-
 
     def test_successful_reservation_submission(self):
         """
@@ -78,4 +75,3 @@ class TestBookingView(TestCase):
             b'Your Reservations',
             response.content
         )
-        

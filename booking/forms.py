@@ -3,7 +3,6 @@ import datetime
 from .models import Reservation
 
 
-
 class DateInput(forms.DateInput):
     """
     Provides the user with a UI Calendar to select date

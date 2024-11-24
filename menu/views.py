@@ -6,6 +6,8 @@ from .forms import CommentForm
 from .models import Dish, Comment
 
 # Create your views here.
+
+
 class MenuList(generic.ListView):
     queryset = Dish.objects.filter(status=1)
     template_name = "menu/menu_list.html"
@@ -33,9 +35,7 @@ def menu_detail(request, slug):
     dish = get_object_or_404(queryset, slug=slug)
     comments = dish.comments.all().order_by("-commented_on")
     comment_count = dish.comments.filter(approved=True).count()
-    
-    
-    
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -143,7 +143,8 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('menu_detail', args=[slug]))
 
@@ -166,6 +167,7 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('menu_detail', args=[slug]))

@@ -4,6 +4,7 @@ from django.test import TestCase
 from .forms import CommentForm
 from .models import Dish, Comment
 
+
 class TestMenuViews(TestCase):
     """
     Test suite for testing the menu views validation
@@ -27,10 +28,9 @@ class TestMenuViews(TestCase):
                                approved=True)
         self.comment.save()
 
-
     def test_render_menu_detail_page_with_comment_form(self):
         """
-        Test valdation for render of menu detail 
+        Test valdation for render of menu detail
         page with comment form
         """
         response = self.client.get(reverse(
@@ -42,13 +42,11 @@ class TestMenuViews(TestCase):
         self.assertIsInstance(
             response.context['comment_form'], CommentForm)
 
-
     def test_dish_no_hearts(self):
         """
         Test valdation for no hearts
         """
         self.assertEqual(self.dish.hearts.count(), 0)
-
 
     def test_dish_hearts(self):
         """
@@ -57,13 +55,11 @@ class TestMenuViews(TestCase):
         self.dish.hearts.add(self.user)
         self.assertEqual(self.dish.hearts.count(), 1)
 
-
     def test_comment_no_likes(self):
         """
         Test valdation for no likes
         """
         self.assertEqual(self.comment.likes.count(), 0)
-
 
     def test_comment_likes(self):
         """
@@ -71,7 +67,6 @@ class TestMenuViews(TestCase):
         """
         self.comment.likes.add(self.user)
         self.assertEqual(self.comment.likes.count(), 1)
-
 
     def test_successful_comment_submission(self):
         """Test for posting a comment on a post"""

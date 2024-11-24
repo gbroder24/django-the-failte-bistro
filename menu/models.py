@@ -8,6 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
+
 class Dish(models.Model):
     """
     Stores a single dish entry related to :model:`auth.User`.
@@ -21,7 +22,8 @@ class Dish(models.Model):
 
     dish_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="dish_posts")
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="dish_posts")
     content = models.TextField()
     posted_on = models.DateTimeField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -30,15 +32,12 @@ class Dish(models.Model):
     updated_on = models.DateTimeField(default=timezone.now)
     category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
     featured_image = CloudinaryField('image', default='placeholder')
-    
 
     class Meta():
         ordering = ["-posted_on"]
 
-
     def __str__(self):
         return f"{self.dish_title}"
-
 
     def save(self, *args, **kwargs):
         """
@@ -56,8 +55,10 @@ class Comment(models.Model):
     Stores a single comment entry related to :model:`auth.User`
     and :model:`menu.Dish`.
     """
-    post = models.ForeignKey(Dish, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    post = models.ForeignKey(Dish, on_delete=models.CASCADE,
+                             related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="commenter")
     content = models.TextField()
     approved = models.BooleanField(default=False)
     commented_on = models.DateTimeField(default=timezone.now)
@@ -65,7 +66,6 @@ class Comment(models.Model):
 
     class Meta():
         ordering = ["commented_on"]
-
 
     def __str__(self):
         return f"Comment: {self.content} by {self.author} "

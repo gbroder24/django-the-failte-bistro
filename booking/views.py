@@ -40,7 +40,6 @@ def create_booking(request):
     :template: `booking/create_booking.html`
     """
     if request.method == 'POST':
-        print("Received a POST request")
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
             reservation = booking_form.save(commit=False)
@@ -57,7 +56,6 @@ def create_booking(request):
                 messages.ERROR,
                 list(booking_form.errors.values())[0])
     booking_form = BookingForm()
-    print("About to render template")
     return render(
         request,
         "booking/create_booking.html",
@@ -67,9 +65,9 @@ def create_booking(request):
 
 def edit_reservation(request, reservation_id):
     """
-    The view for editing a currently existing booking, validates the current user
-    or redirects back to reservations. Autofills form with current data stored
-    in the booking.
+    The view for editing a currently existing booking,
+    validates the current user or redirects back to reservations.
+    Autofills form with current data stored in the booking.
 
     Displays instance of :model:`auth.User`.
     Displays instance of :model:`booking.Reservation`.
@@ -100,7 +98,8 @@ def edit_reservation(request, reservation_id):
         messages.add_message(
             request,
             messages.ERROR,
-            "ERROR: Only the Guest who made the reservation has permission to change a reservation."
+            "ERROR: Only the Guest who made the reservation"
+            "has permission to change a reservation."
         )
         return redirect('reservations')
     booking_form = BookingForm(instance=reservation)
@@ -133,6 +132,7 @@ def delete_reservation(request, reservation_id):
         messages.add_message(
             request,
             messages.ERROR,
-            "ERROR: Only the Guest who made the reservation has permission to cancel."
+            "ERROR: Only the Guest who made the reservation"
+            "has permission to cancel."
         )
         return redirect('reservations')

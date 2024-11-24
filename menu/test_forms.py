@@ -3,6 +3,7 @@ from .forms import CommentForm
 
 # Create your tests here.
 
+
 class TestCommentForm(TestCase):
     """
     Test suite for testing the comment form validation
@@ -14,7 +15,6 @@ class TestCommentForm(TestCase):
         """
         comment_form = CommentForm({'content': 'This is a great post'})
         self.assertTrue(comment_form.is_valid(), msg='Form is not valid')
-
 
     def test_form_is_invalid(self):
         """

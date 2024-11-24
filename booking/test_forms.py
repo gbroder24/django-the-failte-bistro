@@ -3,6 +3,7 @@ from .forms import BookingForm
 
 # Create your tests here.
 
+
 class TestBookingForm(TestCase):
     """
     Test suite for testing the booking form validation
@@ -22,7 +23,6 @@ class TestBookingForm(TestCase):
             })
         self.assertTrue(booking_form.is_valid(), msg='Form is not valid')
 
-
     def test_booking_first_name_invalid(self):
         """
         Test validation for the empty First name field
@@ -35,8 +35,9 @@ class TestBookingForm(TestCase):
             'num_of_guests': '2',
             'contact_num': '0812345678',
             })
-        self.assertFalse(booking_form.is_valid(), msg='First name was not provided, but the form is valid')
-
+        self.assertFalse(booking_form.is_valid(),
+                         msg='First name was not provided,'
+                         'but the form is valid')
 
     def test_booking_last_name_invalid(self):
         """
@@ -50,8 +51,9 @@ class TestBookingForm(TestCase):
             'num_of_guests': '2',
             'contact_num': '0812345678',
             })
-        self.assertFalse(booking_form.is_valid(), msg='Last name was not provided, but the form is valid')
-
+        self.assertFalse(booking_form.is_valid(),
+                         msg='Last name was not provided,'
+                         'but the form is valid')
 
     def test_booking_date_invalid(self):
         """
@@ -65,8 +67,8 @@ class TestBookingForm(TestCase):
             'num_of_guests': '2',
             'contact_num': '0812345678',
             })
-        self.assertFalse(booking_form.is_valid(), msg='Date was not provided, but the form is valid')
-
+        self.assertFalse(booking_form.is_valid(),
+                         msg='Date was not provided, but the form is valid')
 
     def test_booking_time_invalid(self):
         """
@@ -80,8 +82,8 @@ class TestBookingForm(TestCase):
             'num_of_guests': '2',
             'contact_num': '0812345678',
             })
-        self.assertFalse(booking_form.is_valid(), msg='Time was not provided, but the form is valid')
-
+        self.assertFalse(booking_form.is_valid(),
+                         msg='Time was not provided, but the form is valid')
 
     def test_booking_num_of_guests_invalid(self):
         """
@@ -95,8 +97,9 @@ class TestBookingForm(TestCase):
             'num_of_guests': '',
             'contact_num': '0812345678',
             })
-        self.assertFalse(booking_form.is_valid(), msg='Number of guests was not provided, but the form is valid')
-
+        self.assertFalse(booking_form.is_valid(),
+                         msg='Number of guests was not provided,'
+                         'but the form is valid')
 
     def test_booking_contact_num_invalid(self):
         """
@@ -110,4 +113,6 @@ class TestBookingForm(TestCase):
             'num_of_guests': '2',
             'contact_num': '',
             })
-        self.assertFalse(booking_form.is_valid(), msg='Contact number was not provided, but the form is valid')
+        self.assertFalse(booking_form.is_valid(),
+                         msg='Contact number was not provided,'
+                         'but the form is valid')
