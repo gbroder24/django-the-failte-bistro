@@ -4,6 +4,9 @@ from .forms import BookingForm
 # Create your tests here.
 
 class TestBookingForm(TestCase):
+    """
+    Test suite for testing the booking form validation
+    """
 
     def test_booking_is_valid(self):
         """

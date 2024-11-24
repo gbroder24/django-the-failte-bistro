@@ -9,6 +9,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 
 class Dish(models.Model):
+    """
+    Stores a single dish entry related to :model:`auth.User`.
+    """
 
     CATEGORY_CHOICES = [
         ('starter', 'Starter'),
@@ -49,6 +52,10 @@ class Dish(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Stores a single comment entry related to :model:`auth.User`
+    and :model:`menu.Dish`.
+    """
     post = models.ForeignKey(Dish, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     content = models.TextField()

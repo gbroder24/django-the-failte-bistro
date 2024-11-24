@@ -5,6 +5,9 @@ from .models import Dish, Comment
 
 @admin.register(Dish)
 class MenuAdmin(SummernoteModelAdmin):
+    """
+    Adds rich-text editing of content in admin
+    """
 
     list_display = ('dish_title', 'slug', 'status', 'posted_on')
     search_fields = ['title', 'content']

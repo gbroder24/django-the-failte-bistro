@@ -1,11 +1,14 @@
-from django.test import TestCase
 from django.contrib.auth.models import User
+from django.test import TestCase
 from django.urls import reverse
-from .models import Reservation
 from .forms import BookingForm
+from .models import Reservation
 
 
 class TestBookingView(TestCase):
+    """
+    Test suite for testing the booking views validation
+    """
 
     def setUp(self):
         """

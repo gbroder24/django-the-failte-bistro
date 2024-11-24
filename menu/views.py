@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Dish, Comment
+from django.shortcuts import render, get_object_or_404, reverse
+from django.views import generic
 from .forms import CommentForm
+from .models import Dish, Comment
 
 # Create your views here.
 class MenuList(generic.ListView):
@@ -13,16 +13,20 @@ class MenuList(generic.ListView):
 
 def menu_detail(request, slug):
     """
-    Display an individual dish.
+    Renders the most recent dish a user selects.
+    Displays instance of :model:`auth.User`.
+    Displays instance of :model:`menu.Dish`.
 
     **Context**
     ``dish``: The dish object being viewed.
     ``comments``: A list of comments on the dish.
     ``comment_count``: Total number of approved comments.
     ``like_count``: Total number of likes (likes) given to the dish.
+    ``heart_count``: Total number of hearts (love) given to the dish.
     ``comment_form``: Form to submit a comment.
 
-    **Template**: menu/menu_detail.html
+    **Template:**
+    :template: `menu/menu_detail.html`
     """
 
     queryset = Dish.objects.filter(status=1)
@@ -117,9 +121,14 @@ def menu_detail(request, slug):
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
+
+    **Context**
+    ``dish``: The dish object being viewed.
+    ``comments``: A list of comments on the dish.
+    ``like_count``: Total number of likes (likes) given to the dish.
+    ``comment_form``: Form to submit a comment.
     """
 
-    
     if request.method == "POST":
 
         queryset = Dish.objects.filter(status=1)
@@ -142,6 +151,12 @@ def comment_edit(request, slug, comment_id):
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
+
+     **Context**
+    ``dish``: The dish object being viewed.
+    ``comments``: A list of comments on the dish.
+    ``like_count``: Total number of likes (likes) given to the dish.
+    ``comment_form``: Form to submit a comment.
     """
     queryset = Dish.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)

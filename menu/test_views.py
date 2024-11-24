@@ -5,6 +5,9 @@ from .forms import CommentForm
 from .models import Dish, Comment
 
 class TestMenuViews(TestCase):
+    """
+    Test suite for testing the menu views validation
+    """
 
     def setUp(self):
         """

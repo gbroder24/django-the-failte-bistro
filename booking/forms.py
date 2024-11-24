@@ -1,6 +1,7 @@
 from django import forms
-from .models import Reservation
 import datetime
+from .models import Reservation
+
 
 
 class DateInput(forms.DateInput):
@@ -12,6 +13,9 @@ class DateInput(forms.DateInput):
 
 
 class BookingForm(forms.ModelForm):
+    """
+    Form class for users to request a booking
+    """
     class Meta:
         model = Reservation
         fields = (

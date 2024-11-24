@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Reservation
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BookingForm
+from .models import Reservation
 
 # Create your views here.
 
@@ -11,7 +11,7 @@ def reservations(request):
     The View that renders the reservations.html
     which shows all bookings made by the current user
     or gives link to make a booking if no reservations made
-    or redirects to signup page if user is not signed in.
+    or redirects to signin page if user is not signed in.
     """
     if request.user.is_authenticated:
         reservations = Reservation.objects.filter(
@@ -29,6 +29,15 @@ def create_booking(request):
     Renders the Create Booking Page, presents the user
     with a form and validation to submit details for
     desired booking for the guest.
+
+    Displays instance of :model:`auth.User`.
+    Displays instance of :model:`booking.Reservation`.
+
+    **Context**
+    ``booking_form``: Form to submit a booking.
+
+    **Template:**
+    :template: `booking/create_booking.html`
     """
     if request.method == 'POST':
         print("Received a POST request")
@@ -61,6 +70,15 @@ def edit_reservation(request, reservation_id):
     The view for editing a currently existing booking, validates the current user
     or redirects back to reservations. Autofills form with current data stored
     in the booking.
+
+    Displays instance of :model:`auth.User`.
+    Displays instance of :model:`booking.Reservation`.
+
+    **Context**
+    ``booking_form``: Form to submit a booking.
+
+    **Template:**
+    :template: `booking/edit_booking.html`
     """
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.user == reservation.customer:
@@ -98,6 +116,9 @@ def delete_reservation(request, reservation_id):
     The View that deletes the desired booking, requires the
     user that made the booking otherwise will redirect back
     to reservations.
+
+    **Context**
+    ``booking_form``: Form to submit a booking.
     """
     reservation = get_object_or_404(Reservation, pk=reservation_id)
     if request.user == reservation.customer:

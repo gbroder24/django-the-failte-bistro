@@ -1,7 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+from django.db import models
 import datetime
 
 HOURS = (
@@ -34,6 +34,11 @@ GUESTS = (
 
 
 def validate_date(date):
+    """
+    Validates if the given date is in the past.
+    If the provided date is earlier than today's 
+    date than a validation error is raised.
+    """
     if date < datetime.date.today():
         raise ValidationError(
             "Invalid date!",
@@ -44,6 +49,9 @@ def validate_date(date):
 # Create your models here.
 
 class Reservation(models.Model):
+    """
+    Stores a single booking entry related to :model:`auth.User`.
+    """
     customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='customer_reservation')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)

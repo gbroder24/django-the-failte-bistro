@@ -4,6 +4,9 @@ from .forms import CommentForm
 # Create your tests here.
 
 class TestCommentForm(TestCase):
+    """
+    Test suite for testing the comment form validation
+    """
 
     def test_form_is_valid(self):
         """

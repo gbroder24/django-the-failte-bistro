@@ -60,39 +60,39 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <!-- Home Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <!-- About Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
                             href="{% url 'about' %}">About</a>
-                    </li>
+              
                     <!-- Menu Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == menu_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == menu_url %}active" aria-current="page{% endif %}"
                             href="{% url 'menu' %}">Menu</a>
                     </li>
                     {% if user.is_authenticated %}
                     <!-- Reservations Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == reservations_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == reservations_url %}active" aria-current="page{% endif %}"
                             href="{% url 'reservations' %}">Reservations</a>
                     </li>
                     <!-- Logout Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <!-- Signup Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_signup' %}">Signup</a>
                     </li>
                     <!-- Login Link -->
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
