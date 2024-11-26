@@ -1,6 +1,6 @@
 /* Set background color for the body */
 .main-bg {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #ffffff; /* Light background */
 }
 
 /* Branding font */
@@ -100,7 +100,7 @@
 /* Hero Styles */
 
 #hero {
-    background: url('/static/images/hero-img-lg.jpg') no-repeat center center;
+    background: url('/static/images/hero-img-lg.webp') no-repeat center center;
     background-size: cover;
     min-height: 82vh;
 }
@@ -236,7 +236,7 @@
     color: inherit;             /* Make the text color inherit from the parent element */
 }
 
-/* Optional: Style the card text to look like normal text */
+/* Style the card text to look like normal text */
 .card .post-link .card-title, 
 .card .post-link .card-text {
     color: #333;  /* Darker color for the text */

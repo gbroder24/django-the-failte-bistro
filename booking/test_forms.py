@@ -16,12 +16,12 @@ class TestBookingForm(TestCase):
         booking_form = BookingForm({
             'first_name': 'John',
             'last_name': 'Jones',
-            'date': '2024-11-20',
-            'time': '18:00',
+            'date': '2025-05-20',
+            'time': '19:00',
             'num_of_guests': '2',
-            'contact_num': '0812345678',
+            'contact_num': '123456789',
             })
-        self.assertTrue(booking_form.is_valid(), msg='Form is not valid')
+        self.assertTrue(booking_form.is_valid())
 
     def test_booking_first_name_invalid(self):
         """

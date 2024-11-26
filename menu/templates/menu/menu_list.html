@@ -19,7 +19,7 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in dish.featured_image.url %}
-                                    <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                    <img class="card-img-top img-fluid" src="{% static 'images/default.webp' %}"
                                         alt="placeholder image">
                                     {% else %}
                                     <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
@@ -64,7 +64,7 @@
                         <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
                             <div class="image-container">
                                 {% if "placeholder" in dish.featured_image.url %}
-                                <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                <img class="card-img-top img-fluid" src="{% static 'images/default.webp' %}"
                                     alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:4 %}
+            {% if forloop.counter|divisibleby:5 %}
             <div class="row">
                 {% endif %}
                 {% endif %}
@@ -106,7 +106,7 @@
                         <a href="{% url 'menu_detail' dish.slug %}" class="post-link">
                             <div class="image-container">
                                 {% if "placeholder" in dish.featured_image.url %}
-                                <img class="card-img-top img-fluid" src="{% static 'images/default.jpg' %}"
+                                <img class="card-img-top img-fluid" src="{% static 'images/default.webp' %}"
                                     alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
