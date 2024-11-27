@@ -114,24 +114,24 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| Home | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| About | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| About | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| Menu | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| Menu | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| Menu Detail | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| Menu Detail | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| Reservation | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| Reservation | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| Booking | Desktop | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | No major warnings |
-| Booking | Mobile | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | Some minor warnings |
-| Sign Up | Desktop | ![screenshot](documentation/testing/lighthouse-sign-up-desktop.png) | No major warnings |
-| Sign Up | Mobile | ![screenshot](documentation/testing/lighthouse-sign-up-mobile.png) | Some minor warnings |
-| Sign In | Desktop | ![screenshot](documentation/testing/lighthouse-sign-in-desktop.png) | No major warnings |
-| Sign In | Mobile | ![screenshot](documentation/testing/lighthouse-sign-in-mobile.png) | Some minor warnings |
-| Sign Out | Desktop | ![screenshot](documentation/testing/lighthouse-sign-out-desktop.png) | No major warnings |
-| Sign Out | Mobile | ![screenshot](documentation/testing/lighthouse-sign-out-mobile.png) | Some minor warnings |
+| Home | Desktop | ![screenshot](documentation/testing/home-score-desktop.JPG) | Some minor warnings |
+| Home | Mobile | ![screenshot](documentation/testing/home-score-mobile.JPG) | Some minor warnings |
+| About | Desktop | ![screenshot](documentation/testing/about-score-desktop.JPG) | Some minor warnings |
+| About | Mobile | ![screenshot](documentation/testing/about-score-mobile.JPG) | Some minor warnings |
+| Menu | Desktop | ![screenshot](documentation/testing/menu-score-desktop.JPG) | Some minor warnings |
+| Menu | Mobile | ![screenshot](documentation/testing/menu-score-mobile.JPG) | Some minor warnings |
+| Menu Detail | Desktop | ![screenshot](documentation/testing/menu-detail-score-desktop.JPG) | Some minor warnings |
+| Menu Detail | Mobile | ![screenshot](documentation/testing/menu-detail-score-mobile.JPG) | Some minor warnings |
+| Reservation | Desktop | ![screenshot](documentation/testing/reservation-score-desktop.JPG) | Some minor warnings |
+| Reservation | Mobile | ![screenshot](documentation/testing/reservation-score-mobile.JPG) | Some minor warnings |
+| Booking | Desktop | ![screenshot](documentation/testing/booking-score-desktop.JPG) | Some minor warnings |
+| Booking | Mobile | ![screenshot](documentation/testing/booking-score-mobile.JPG) | Some minor warnings |
+| Sign Up | Desktop | ![screenshot](documentation/testing/signup-score-desktop.JPG) | Some minor warnings |
+| Sign Up | Mobile | ![screenshot](documentation/testing/signup-score-mobile.JPG) | Some minor warnings |
+| Sign In | Desktop | ![screenshot](documentation/testing/login-score-desktop.JPG) | Some minor warnings |
+| Sign In | Mobile | ![screenshot](documentation/testing/login-score-mobile.JPG) | Some minor warnings |
+| Sign Out | Desktop | ![screenshot](documentation/testing/logout-score-desktop.JPG) | Some minor warnings |
+| Sign Out | Mobile | ![screenshot](documentation/testing/logout-score-mobile.JPG) | Some minor warnings |
 
 ## Manual Testing
 
