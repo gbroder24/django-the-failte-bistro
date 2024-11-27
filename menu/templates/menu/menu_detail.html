@@ -108,11 +108,9 @@
                         class="p-2 comments card mb-3 {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                         <p class="font-weight-bold">{{ comment.author }} <small
                                 class="text-muted">{{ comment.commented_on }}</small> wrote:</p>
-                        <article id="comment{{ comment.id }}">
-                            <h6>
+                        <div id="comment{{ comment.id }}">
                                 {{ comment.content | linebreaks }}
-                            </h6>
-                        </article>
+                        </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <!-- Like Button Section for Comments -->
