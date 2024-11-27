@@ -109,7 +109,9 @@
                         <p class="font-weight-bold">{{ comment.author }} <small
                                 class="text-muted">{{ comment.commented_on }}</small> wrote:</p>
                         <article id="comment{{ comment.id }}">
-                            {{ comment.content | linebreaks }}
+                            <h6>
+                                {{ comment.content | linebreaks }}
+                            </h6>
                         </article>
 
                         <div class="d-flex justify-content-between align-items-center mb-2">
