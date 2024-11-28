@@ -162,6 +162,13 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ![ Footer ](documentation/features/footer-map-mobile.JPG)
 
+### Back To Top
+
+- The Back To Top link again has a simple design. When the user clicks the button, it typically triggers a JavaScript function to scroll the page back to the top. It also aligns with the color scheme. This feature enhances the ux.
+
+![ Back To Top ](documentation/features/back-to-top.JPG) 
+
+
 ### Hero  
 
 - The hero section serves as the main landing page for the website, providing branding with the bistros name and a clear purpose and explanation of what the main goals of the site are with links to make a reservation and view the menu.

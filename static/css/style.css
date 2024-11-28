@@ -117,16 +117,10 @@
     line-height: 0;
   }
   
-  .scroll-top:hover {
-    background: #6cd1a0;
-    color: #fff;
-  }
-  
   .scroll-top.active {
     visibility: visible;
     opacity: 1;
   }
-
 
 /* Hero Styles */
 
