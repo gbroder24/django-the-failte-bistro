@@ -40,16 +40,6 @@ class Dish(models.Model):
     def __str__(self):
         return f"{self.dish_title}"
 
-    # def save(self, *args, **kwargs):
-    #     """
-    #     Method to enforce image upload restriction to admins only.
-    #     Check if image is being added by a non-admin user.
-    #     """
-    #     if self.featured_image != 'placeholder' and not self.author.is_staff:
-    #         raise ValidationError("Only admin can upload images.")
-
-    #     super(Dish, self).save(*args, **kwargs)
-
 
 class Comment(models.Model):
     """

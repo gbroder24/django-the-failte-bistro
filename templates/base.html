@@ -6,6 +6,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'admin' as admin_url %}
 
 {% load static %}
 
@@ -94,6 +95,11 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel <i class="fa-solid fa-shield-halved"></i></a>
                     </li>
                     {% endif %}
                 </ul>
