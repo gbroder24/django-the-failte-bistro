@@ -128,17 +128,27 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 | Booking   | Icon visible but redirected to Sign In page/Sign Up through link | Visable and full feature interaction available |
 | Reservation Page  | Not Visable | Visable and full feature interaction available |
 
+### Favicon
+
+- The [ Favicon ](https://favicon.io/) image has a simple design to easily inform the user that this is the logo of the bistro. It also aligns with the color scheme.
+
+![ Favicon ](documentation/features/apple-touch-icon.png) 
+
 ### Navbar  
 
-- The NavBar has a sleek and slimple design to easily help the user navigate around the page, with the bistro name clearly conveying to the user who the page belongs to, and emphasizing the book a table button using the color scheme.
+- The NavBar has a sleek and slimple design to easily help the user navigate around the page, with the bistro name clearly conveying to the user who the page belongs to, and emphasizing the book a table button using the color scheme. 
 
 ![ Navbar ](documentation/features/navbar-unregistered-desktop.JPG)  
 
 ![ Navbar ](documentation/features/navbar-registered-desktop.JPG) 
 
+![ Navbar ](documentation/features/navbar-staff-desktop.JPG) 
+
 ![ Navbar ](documentation/features/navbar-unregistered-mobile.JPG) 
 
 ![ Navbar ](documentation/features/navbar-registered-mobile.JPG) 
+
+![ Navbar ](documentation/features/navbar-staff-mobile.JPG)
 
 ### Footer
 
@@ -245,7 +255,7 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ### Future Features
 
-- **Admin key icon for staff login**: A key link or icon appears in the nav bar for the Admin user that brings them directly to the admin panel without having to type it in to the browser.
+- **Admin Page**: The admin page can be customised and features styled to the users requirements.
 - **Social account login**: Allowing popular social account login to the Failte Bistro site will speed up the registration and booking process.
 
 ## Technologies and Languages Used
@@ -300,6 +310,11 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 - [ Image Resizer ](https://imageresizer.com/) to resize images
 - [ Coolers ](https://coolors.co/) to create colour palette
 - [ Lucidchart ](https://www.lucidchart.com/pages/) was used to create the database schema.
+- [ Favicon ](https://favicon.io/) to create the logo.
+- [ Am I Responsive ](https://ui.dev/amiresponsive) to create the mockup.
+- [ Cloud Convert ](https://cloudconvert.com/jpg-to-webp) to convert images to webp.
+- [ Diff Checker ](https://www.diffchecker.com/) to compare code.
+- [ Croppola ](https://croppola.com/) to crop images.
  
 
 ## Testing  

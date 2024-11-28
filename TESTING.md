@@ -133,6 +133,10 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Sign Out | Desktop | ![screenshot](documentation/testing/logout-score-desktop.JPG) | Some minor warnings |
 | Sign Out | Mobile | ![screenshot](documentation/testing/logout-score-mobile.JPG) | Some minor warnings |
 
+**NOTE**
+
+- The Best Practices score is a result of the use of third party cookies, 14 were found. 
+
 ## Manual Testing
 
 | Page | Test | Outcome |
@@ -166,6 +170,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Authentication | User can logout to their account | Pass |
 | Authentication | Admin has has more privileges than a User | Pass |
 | Authentication | Admin can post to the menu detail page. A user can not. | Pass |
+| Authentication | Admin can navigate to the admin panel page. A user can not. | Pass |
 | Authentication | Admin can post to the menu detail page without an image and a default image will display. A user can not. | Pass |
 | Authentication | Admin can post images to the menu detail page. A user can not. | Pass |
 | Authentication | Admin can delete post to the menu detail page. A user can not. | Pass |
