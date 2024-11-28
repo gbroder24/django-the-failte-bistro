@@ -22,7 +22,7 @@
                                     <img class="card-img-top img-fluid" src="{% static 'images/default.webp' %}"
                                         alt="placeholder image">
                                     {% else %}
-                                    <img class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
+                                    <img fetchpriority="high" class="card-img-top img-fluid" src="{{ dish.featured_image.url }}"
                                         alt="{{ dish.dish_title }}">
                                     {% endif %}
                                     <div class="image-flash">

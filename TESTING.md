@@ -14,7 +14,7 @@ it will not validate properly if I copy and paste into the HTML validator straig
 Usually in order to properly validate these types of files, it's recommended to
 [validate by uri](https://validator.w3.org/#validate_by_uri) from the deployed Heroku pages.
 
-Unfortunately, nearly all of the pages on this site require a user to be logged-in and authenticated,
+Some of the pages on this site require a user to be logged-in and authenticated,
 and will not work using this method, due to the fact that the HTML Validator (W3C) doesn't have
 access to login to the pages.
 
@@ -30,15 +30,13 @@ In order to properly validate my HTML pages with Jinja syntax for authenticated 
 | --- | --- | --- | --- |
 | Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2F) | ![screenshot](documentation/testing/home-no-errors.JPG) | Pass: No Errors |
 | About | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Fabout%2F) | ![screenshot](documentation/testing/about-no-errors.JPG) | Pass: No Errors |
-| Menu | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Fmenu%2F) | ![screenshot](documentation/testing/menu-list-errors.JPG) | Fail: One Error |
 | Menu | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Fmenu%2F) | ![screenshot](documentation/testing/menu-list-no-errors.JPG) | Pass: No Errors |
-| Menu Detail | N/A |  ![screenshot](documentation/testing/menu-detail-errors-direct-input-1.JPG) ![screenshot](documentation/testing/menu-detail-errors-direct-input-2.JPG) ![screenshot](documentation/testing/menu-detail-errors-direct-input-3.JPG) | Fail: Two Errors |
-| Reservation | N/A | ![screenshot](documentation/testing/reservations-error-direct-input.JPG) | Fail: One Error |
+| Menu Detail | N/A | ![screenshot](documentation/testing/menu-detail-no-errors-direct-input.JPG) | Pass: No Errors |
 | Reservation | N/A | ![screenshot](documentation/testing/reservations-no-error-direct-input.JPG) | Pass: No Errors |
 | Booking | N/A | ![screenshot](documentation/testing/create-booking-no-errors-direct-input.JPG) | Pass: No Errors |
 | Log In | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Flogin%2F) | ![screenshot](documentation/testing/login-no-errors.JPG) | Pass: No Errors |
 | Log Out | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2F) | ![screenshot](documentation/testing/logout-no-errors.JPG) | Pass: No Errors |
-| Sign Up | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](documentation/testing/signup-errors.JPG) | Fail: Four Errors |
+| Sign Up | [W3C](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](documentation/testing/signup-no-errors.JPG) | Pass: No Errors |
 
 ### CSS
 
