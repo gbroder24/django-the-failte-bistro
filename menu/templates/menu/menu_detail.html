@@ -135,8 +135,8 @@
                             <p class="approval">This comment is awaiting approval</p>
                             {% endif %}
                             {% if user.is_authenticated and comment.author == user %}
-                            <button class="btn btn-edit btn-primary mr-2" comment_id="{{ comment.id }}">Edit</button>
-                            <button class="btn btn-delete btn-danger" comment_id="{{ comment.id }}">Delete</button>
+                            <button class="btn btn-edit btn-primary mr-2" data-comment-id="{{ comment.id }}">Edit</button>
+                            <button class="btn btn-delete btn-danger" data-comment-id="{{ comment.id }}">Delete</button>
                             {% endif %}
                         </div>
                     </div>
@@ -144,8 +144,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <!-- Delete confirmation modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
