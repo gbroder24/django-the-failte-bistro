@@ -1,5 +1,5 @@
 <h1 align="center">The Failte Bistro</h1>
-<div align="center"><img src="documentation/website-responsive-mockup.png"></div>
+<div align="center"><img src="documentation/images/website-responsive-mockup.JPG"></div>
 
 This project was designed as a bistro website, booking tool and blog for the fictional buisness The Failte Bistro, 
 based in Limerick City, Ireland. This project is intended for educational purposes only.

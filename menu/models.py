@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from django.db import models
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
@@ -39,15 +40,15 @@ class Dish(models.Model):
     def __str__(self):
         return f"{self.dish_title}"
 
-    def save(self, *args, **kwargs):
-        """
-        Method to enforce image upload restriction to admins only.
-        Check if image is being added by a non-admin user.
-        """
-        if self.featured_image != 'placeholder' and not self.author.is_staff:
-            raise ValidationError("Only admin can upload images.")
+    # def save(self, *args, **kwargs):
+    #     """
+    #     Method to enforce image upload restriction to admins only.
+    #     Check if image is being added by a non-admin user.
+    #     """
+    #     if self.featured_image != 'placeholder' and not self.author.is_staff:
+    #         raise ValidationError("Only admin can upload images.")
 
-        super(Dish, self).save(*args, **kwargs)
+    #     super(Dish, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

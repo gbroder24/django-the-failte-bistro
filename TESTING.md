@@ -166,6 +166,8 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Authentication | User can logout to their account | Pass |
 | Authentication | Admin has has more privileges than a User | Pass |
 | Authentication | Admin can post to the menu detail page. A user can not. | Pass |
+| Authentication | Admin can post to the menu detail page without an image and a default image will display. A user can not. | Pass |
+| Authentication | Admin can post images to the menu detail page. A user can not. | Pass |
 | Authentication | Admin can delete post to the menu detail page. A user can not. | Pass |
 | Authentication | Admin can review and approve comments on the menu detail page. A user can not. | Pass |
 | Authentication | Admin can review and delete comments on the menu detail page. A user can not. | Pass |
