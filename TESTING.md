@@ -1,6 +1,6 @@
 # Testing
 
-Return back to the [README.md](README.md) file.
+Test scenarios for the Failte Bistro application were created by the Junior Full Stack Software Developer (Gary Broderick). User testing (by family and friends) was also executed.
 
 ## Code Validation
 
@@ -35,7 +35,7 @@ In order to properly validate my HTML pages with Jinja syntax for authenticated 
 | Reservation | N/A | ![screenshot](documentation/testing/reservations-no-error-direct-input.JPG) | Pass: No Errors |
 | Booking | N/A | ![screenshot](documentation/testing/create-booking-no-errors-direct-input.JPG) | Pass: No Errors |
 | Log In | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Flogin%2F) | ![screenshot](documentation/testing/login-no-errors.JPG) | Pass: No Errors |
-| Log Out | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2F) | ![screenshot](documentation/testing/logout-no-errors.JPG) | Pass: No Errors |
+| Log Out | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Flogout%2F) | ![screenshot](documentation/testing/logout-no-errors.JPG) | Pass: No Errors |
 | Sign Up | [W3C](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fdjango-pp4-failte-bistro-dd00169a966c.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](documentation/testing/signup-no-errors.JPG) | Pass: No Errors |
 
 ### CSS
@@ -201,17 +201,18 @@ In order to run the tests, I ran the following command in the terminal:
 
 **Fixed Bugs**
 
-When submitting the reservation form the user / admin received a feedback message informing them of an invalid data type submission. On review of the reservation model, the GUESTS tuple had strings in the tuples and these were assigned to choices in the integer field of the number of guests. To resolve this error integers were coded instead of strings in the GUESTS tuple of tuples.
+- When submitting the reservation form the user / admin received a feedback message informing them of an invalid data type submission. On review of the reservation model, the GUESTS tuple had strings in the tuples and these were assigned to choices in the integer field of the number of guests. To resolve this error integers were coded instead of strings in the GUESTS tuple of tuples.
+
+There was a known bug in the menu list page. When there are three dishes in the starters row and admin posts a fourth dish, this new post pushes an earlier post to the next row and it takes up the entirety of the new row making it larger than the other posts. This bug was  propagated to the main and desserts rows also. This issue arose because of too many div elements / stray div elements. Offending div elements were removed and bug fixed.
 
 **Open Issues**
 
-
+The one open issue is a user can reset their password if they forget it so that they can regain access to there account. Due to time constraints this issue is to stay open and hopefully closed in the future as it will add to my knowledge base.
 
 ## Unfixed Bugs
 
-There is a known bug in the menu list page. When there are three dishes in the starters row and admin posts a fourth dish, this new post pushes an earlier post to the next row and it takes up the entirety of the new row making it larger than the other posts.
-This bug may be propagated to the main and desserts rows.
-
-There is a known bug in the menu list page. In the menu_list.html file the three for loop counters are not all divisable by three. To get all the posts displaying in a row. Different values were used for the for loops.
+None that I know of.
 
 [ Back To Top ](#testing)
+
+Return back to the [README.md](README.md) file.
