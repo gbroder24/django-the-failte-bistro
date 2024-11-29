@@ -209,7 +209,7 @@ There was a known bug in the menu list page. When there are three dishes in the 
 
 **Open Issues**
 
-The one open issue is a user can reset their password if they forget it so that they can regain access to there account. Due to time constraints this issue is to stay open and hopefully closed in the future as it will add to my knowledge base.
+The one open issue is a user can reset their password if they forget it so that they can regain access to there account. This issue is to stay open and hopefully closed in the future as it will add to my knowledge base.
 
 ## Unfixed Bugs
 
