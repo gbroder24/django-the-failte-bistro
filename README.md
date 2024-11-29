@@ -43,7 +43,7 @@ View the live project [here.](https://django-pp4-failte-bistro-dd00169a966c.hero
 
 -   ### Wireframes
 
-    - Several wireframes were created to assist with the design however there is not an exhaustive collection of all page designs. Wireframes can be viewed [here](documentation/wireframes).
+    - Several wireframes were created to assist with the design. Wireframes can be viewed [here](documentation/wireframes).
 
 -   ### Database Schema 
 
@@ -103,7 +103,8 @@ View the live project [here.](https://django-pp4-failte-bistro-dd00169a966c.hero
           - Failte Bistro was developed to ensure a smooth user experience, to the best of my current learning experience with Django. 
 
             - Input validation and error messages provide feedback to the user to guide them towards the desired outcome. 
-            - Unregistered users are diverted to the Sign Up page from restricted access pages. 
+            - Unregistered users are diverted to the Sign In page or Sign Up through a link from restricted reservation booking page. 
+            - Unregistered users are restricted from viewing comments in the menu detail page.
             - Authentication processes control edit/delete icons to reveal them to the content author only. 
             - Deletion of data is confirmed through an additional modal, double-checking with the user.
             - Testing and validation of features completes the process.
@@ -124,7 +125,7 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 | Home Page | Visable           | Visable         |
 | About Page | Visable          | Visable         |
 | Menu      | Visable           | Visable         |
-| Menu Detail Page | Visable           | Visable but full feature interaction not available        |
+| Menu Detail Page | Visable but full feature interaction not available | Visable and full feature interaction not available        |
 | Booking   | Icon visible but redirected to Sign In page/Sign Up through link | Visable and full feature interaction available |
 | Reservation Page  | Not Visable | Visable and full feature interaction available |
 
@@ -164,7 +165,7 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ### Back To Top
 
-- The Back To Top link again has a simple design. When the user clicks the button, it typically triggers a JavaScript function to scroll the page back to the top. It also aligns with the color scheme. This feature enhances the ux.
+- The Back To Top link again has a simple design. When the user clicks the button, it typically triggers a JavaScript function to scroll the page back to the top. It also aligns with the color scheme. This feature enhances the user experience.
 
 ![ Back To Top ](documentation/features/back-to-top.JPG) 
 
@@ -210,6 +211,10 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ![ Menu Detail ](documentation/features/menu-detail-textarea-mobile.JPG)
 
+![ Menu Detail ](documentation/features/menu-detail-comment-desktop.JPG)
+
+![ Menu Detail ](documentation/features/menu-detail-comment-mobile.JPG)
+
 ### Reservations 
 
 - The Reservations page shows a user's bookings with relevant information for the user, while logged in or if the user has no bookings, informs the user there are no reservations and provides a link to book a table.
@@ -244,7 +249,7 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ### Account Sign In  
 
-- Users are required to add their Username and Password to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign in page is created with a default template available with the AllAuth package. These templates are combined with the power of Bootstraps Crispy Forms pack to give extra control over the forms' appearance.
+- Users are required to add their Username and Password to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign in page is created with a default template available with the AllAuth package. These templates are combined with the power of Bootstraps Form is rendered as paragraphs in the template pack to give extra control over the forms' appearance.
 
 
 ![ login ](documentation/features/sign-in-desktop.JPG)
@@ -256,13 +261,11 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 - A user may choose to sign out and if so will be redirected to the home page on successfull sign out.
 
 
-![ logout ](documentation/features/sign-out-desktop.JPG)
-
 ![ logout ](documentation/features/sign-out-desktop.JPG)  
 
 ### Future Features
 
-- **Admin Page**: The admin page can be customised and features styled to the users requirements.
+- **Admin Page**: The admin page can be customised and features styled to staff / superuser requirements.
 - **Social account login**: Allowing popular social account login to the Failte Bistro site will speed up the registration and booking process.
 
 ## Technologies and Languages Used
@@ -326,7 +329,7 @@ It was important to me from the beginning that the Failte Bistro be accessible t
 
 ## Testing  
 
-Both manual and automated testing was used during the final development phase of the project. For all testing, please refer to the [TESTING.md](TESTING.md) file.
+Test scenarios for the Failte Bistro application were created by the Junior Full Stack Software Developer (Gary Broderick). User testing (by family and friends) was also executed. Automated testing was used during the final development phase of the project. For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
@@ -513,6 +516,7 @@ Note: The `cloudinary_storage` app must be immediately after `django.contrib.sta
 ### Acknowledgements
   - My Code Institute Mentor Rory Patrick Sheridan for feedback and suggestions.
   - My Code Institute Cohort Facilitator Lewis Dillon for project ideas and information.
+  - My Code Institute Tutor Oisin.
   - My family, who helped keep me motivated during this challenging and fun project.
 
 [🔼 Back to top](#user-experience-ux)

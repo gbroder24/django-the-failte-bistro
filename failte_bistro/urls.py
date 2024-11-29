@@ -18,10 +18,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-# from home import views as index_views
-# from about import views as about_views
-# from menu import views as menu_views
-# from booking import views as booking_views
 
 urlpatterns = [
     path('about/', include('about.urls'), name='about-urls'),
@@ -31,7 +27,4 @@ urlpatterns = [
     path('menu/', include('menu.urls'), name='menu-urls'),
     path('summernote/', include('django_summernote.urls')),
     path('', include('home.urls')),
-    
-    # path('menu/', menu_views.menu_failte_bistro, name='menu'),
-    
 ]

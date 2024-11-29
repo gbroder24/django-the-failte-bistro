@@ -288,3 +288,8 @@
 .heart-button:active {
     transform: scale(0.9);
 }
+
+/* Reservations Style */
+.reserve {
+    text-decoration: none;
+}
