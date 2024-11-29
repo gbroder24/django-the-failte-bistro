@@ -68,7 +68,7 @@ def menu_detail(request, slug):
         else:
             messages.add_message(
                 request, messages.WARNING,
-                'You need to be logged in to heart a dish.'
+                'You need to be logged in to love a dish.'
             )
 
     # Handle liking a comment
@@ -82,7 +82,7 @@ def menu_detail(request, slug):
                 comment.likes.remove(request.user)
                 messages.add_message(
                     request, messages.INFO,
-                    'You unliked this comment.'
+                    'You did not like this comment.'
                 )
             else:
                 comment.likes.add(request.user)

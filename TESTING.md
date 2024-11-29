@@ -62,6 +62,8 @@ I have used the recommended [CI Python Linter](https://pep8ci.herokuapp.com) to 
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
+| settings.py (failte_bistro) | ![screenshot](documentation/testing/failte-settings-no-error.JPG) | Pass: No Errors |
+| urls.py (failte_bistro) | ![screenshot](documentation/testing/failte-urls-no-error.JPG) | Pass: No Errors |
 | admin.py (about) | ![screenshot](documentation/testing/about-admin-no-error.JPG) | Pass: No Errors |
 | apps.py (about) | ![screenshot](documentation/testing/about-apps-no-error.JPG) | Pass: No Errors |
 | urls.py (about) | ![screenshot](documentation/testing/about-urls-no-error.JPG) | Pass: No Errors |
