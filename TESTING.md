@@ -52,6 +52,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | Jshint URL | Screenshot |  
 | --- | --- | --- |
+| back_to_top.js | N/A | ![screenshot](documentation/testing/top-no-error.JPG) | 
 | comments.js | N/A | ![screenshot](documentation/testing/comments-no-error.JPG) | 
 | messages.js |  N/A | ![screenshot](documentation/testing/messages-no-error.JPG) | 
 
